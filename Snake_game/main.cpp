@@ -26,9 +26,8 @@ void jatek_vege(){
     mvprintw(height/2-1, 0, "End of the game");
     refresh();
     halfdelay(3);
-    mvprintw(height/2, 0, "Yo have collected %d point(s)!", score);
+    mvprintw(height/2, 0, "Yo have collected %d point(s)! \n", score);
     refresh();
-    endwin();
 
 }
 
@@ -93,7 +92,7 @@ void palya_rajz(){
 
 void bevitel(){
     keypad(stdscr, TRUE);
-    halfdelay(2);
+    halfdelay(1);
     int c = getch();
         switch(c){
             case 'a':
@@ -166,9 +165,16 @@ void mozgas(){
 
 }
 
+void uj_jatek(){
+
+
+
+}
+
+
 void halalozas(){
     int erintes = 0;
-    if (x<0 || x>=width-1 || y==0 || y==height-1){
+    if (x==0 || x>=width-1 || y==0 || y==height-1){
         gameOver=true;
     }
     for (int i = 1; i < score; i++) {
@@ -187,8 +193,20 @@ void halalozas(){
 }
 
 void jatek_betoltes(){
-
-
+    initscr();
+    int sor = 3;
+    int oszlop = width/2;
+    this_thread::sleep_for(seconds(3));
+    for (int i = 3; i >= 1; i--) {
+        mvprintw(sor, oszlop, "%d", i);
+        sor++;
+        refresh();
+        this_thread::sleep_for(seconds(1));
+    }
+    clear();
+    mvprintw(height/2, 3, "SHOW TIME!!");
+    refresh();
+    this_thread::sleep_for(seconds(2));
 }
 
 int main() {
