@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/deckard/Desktop/CLion Projects/Snake_game/main.cpp
+iostream
+-
+cstdlib
+-
+ncurses.h
+-
+chrono
+-
+thread
+-
+
